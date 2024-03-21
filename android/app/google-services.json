@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "713273325829",
+    "project_id": "dtitry2",
+    "storage_bucket": "dtitry2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:713273325829:android:22d49fcae3628b70849f6c",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvULnFFBWQUrXxAE9O9dpR8D5jUG129K8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
