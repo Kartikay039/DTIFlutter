@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/components/food.dart';
 
@@ -11,16 +10,14 @@ class FoodTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Container(
+    return Container(
       decoration: BoxDecoration(
           color: Colors.grey[100], borderRadius: BorderRadius.circular(20)),
       margin: const EdgeInsets.only(right: 25),
-      padding: const EdgeInsets.all(75.0),
+      padding: const EdgeInsets.all(25),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-           
           Image.asset(
             food.imagePath,
             height: 140,
@@ -49,7 +46,6 @@ class FoodTile extends StatelessWidget {
               ],
             ),
           ),
-          
           const SizedBox(height: 10), //  space between ratings and button
           TextButton(
             onPressed: () {
@@ -63,7 +59,6 @@ class FoodTile extends StatelessWidget {
             child: const Text('Add to Cart'),
           ),
         ],
-      ),
       ),
     );
   }
