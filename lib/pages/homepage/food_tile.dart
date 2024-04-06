@@ -31,12 +31,12 @@ class FoodTile extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('\r' + food.price),
+                Text('\r${food.price}'),
                 //price
 
                 Row(
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.star,
                       color: Colors.yellow,
                     ),
@@ -46,7 +46,7 @@ class FoodTile extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 10), //  space between ratings and button
+          const SizedBox(height: 10), //  space between ratings and button
           TextButton(
             onPressed: () {
               // Add to cart functionality
@@ -56,7 +56,7 @@ class FoodTile extends StatelessWidget {
                   const Color.fromARGB(255, 84, 237, 89)),
               foregroundColor: MaterialStateProperty.all(Colors.white),
             ),
-            child: Text('Add to Cart'),
+            child: const Text('Add to Cart'),
           ),
         ],
       ),

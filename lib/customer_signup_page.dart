@@ -1,5 +1,7 @@
+// import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'pages/customer_signin_page.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 
 
@@ -160,22 +162,19 @@ class _CustomerSignUpPageState extends State<CustomerSignUpPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         TextButton(
-                          onPressed: () {
-                            
+                          onPressed: () async {
+                            // if(password == confirmPassword){
+                              await FirebaseAuth.instance.createUserWithEmailAndPassword(email: email, password: password);
+                              
+                              Navigator.pop(context);
+                              //Navigator.pop(context);
+                              
+
+                            // }
                           },
                           child: const Text("Sign Up"),
                         ),
 
-                        TextButton(onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => const CustomerSignInpage()), // Navigate to NewPage widget
-                            );
-                        },
-                          child: const Text(
-                            "Login"
-                          )
-                        ),
                       ],
                     )
                   ],

@@ -1,6 +1,7 @@
 // import 'package:flutter/cupertino.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+// import 'package:flutter_application_1/pages/homepage/home_page.dart';
 // import 'package:flutter/widgets.dart';
 import '../customer_signup_page.dart';
 
@@ -54,15 +55,19 @@ class _CustomerSignInpageState extends State<CustomerSignInpage> {
               ),
               child: Center(
                 child: Column(
+                  
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-
-                    const Text(
-                      "Log In",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w700,
-                        color: Color.fromARGB(255, 66, 189, 80),
-                        fontSize: 40,
+                    
+                    const Padding(
+                      padding: EdgeInsets.only(bottom: 100),
+                      child: Text(
+                        "Log In",
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          color: Color.fromARGB(255, 66, 189, 80),
+                          fontSize: 40,
+                        ),
                       ),
                     ),
 
@@ -139,7 +144,24 @@ class _CustomerSignInpageState extends State<CustomerSignInpage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         TextButton(onPressed: () async {
-                          await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password);
+                          
+                          try{
+                            await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password);
+                            setState(() {
+                              
+                            });
+                            
+
+                          }
+                          catch(e){
+                            print('---------------------------------------------------------------------');
+                            print(e.toString());
+                            return Future.error(e);
+                          }
+                          
+                          
+
+                          
                         },
                           child: const Text(
                             "Login"
