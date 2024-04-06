@@ -40,7 +40,7 @@ class _HomePageState extends State<HomePage> {
     children: [
       const DrawerHeader(
         decoration: BoxDecoration(
-          color: Colors.green,
+          color:  const Color.fromARGB(255, 0, 255, 72),
         ),
         child: Text(
           'User',
@@ -73,7 +73,7 @@ class _HomePageState extends State<HomePage> {
   ),
 ),
 appBar: AppBar(
-  backgroundColor: Colors.green,
+  backgroundColor:  const Color.fromARGB(255, 0, 255, 72),
   elevation: 0,
   title: const Text(
     'Welcome',
