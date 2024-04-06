@@ -51,6 +51,7 @@ class BottomNavBar extends StatelessWidget {
       return [
         // TODO : Replace with the actual widgets for your pages
         const HomePage(),
+
         const Center(child: Text('Second Page')),
         const Center(child: Text('Third Page')),
 
@@ -68,6 +69,7 @@ class BottomNavBar extends StatelessWidget {
           activeColorPrimary: CupertinoColors.activeBlue,
           inactiveColorPrimary: CupertinoColors.systemGrey,
         ),
+        
         PersistentBottomNavBarItem(
           icon: const Icon(Icons.settings),
           title: ("Settings"),
