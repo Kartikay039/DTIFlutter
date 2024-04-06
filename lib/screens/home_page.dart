@@ -11,24 +11,58 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List foodMenu = [
+   List<Food> foodMenu = [
     Food(
-        name: 'Noodles',
-        price: 'Rs 70',
-        imagePath: 'assets/ph.jpg',
-        rating: '4.9'),
+      name: 'Noodles',
+      price: 'Rs 70',
+      imagePath: 'assets/ph.jpg',
+      rating: '4.9',
+    ),
     Food(
-        name: 'Paneer Roll',
-        price: 'Rs 110',
-        imagePath: 'assets/ph.jpg',
-        rating: '3.8'),
+      name: 'Paneer Roll',
+      price: 'Rs 110',
+      imagePath: 'assets/ph.jpg',
+      rating: '3.8',
+    ),
     Food(
-        name: 'Red Sauce Pasta',
-        price: 'Rs 110',
-        imagePath: 'assets/ph.jpg',
-        rating: '4.2')
+      name: 'Red Sauce Pasta',
+      price: 'Rs 110',
+      imagePath: 'assets/ph.jpg',
+      rating: '4.2',
+    )
   ];
 
+  final  TextEditingController _searchController = TextEditingController();
+  //responsible for managing the text field where the user enters the search query.
+
+
+  List<Food> filteredFoodMenu = [];
+
+  @override
+  void initState() {
+    super.initState();
+    filteredFoodMenu = foodMenu;
+    _searchController.addListener(_onSearchChanged);
+  }
+  //is called when the widget is inserted into the widget tree for the first time.
+
+  @override
+  void dispose() {
+    _searchController.dispose();
+    super.dispose();
+  }
+// This method is called when the widget is removed from the widget tree. It's used for cleanup. In this method:
+
+
+  void _onSearchChanged() {
+    String query = _searchController.text.toLowerCase();
+    setState(() {
+      filteredFoodMenu = foodMenu.where((food) {
+        return food.name.toLowerCase().contains(query);
+      }).toList();
+    });
+  }
+//is called whenever the text in the search field changes. It filters the foodMenu based on the entered query and updates the filteredFoodMenu accordingly.
 
   @override
   Widget build(BuildContext context) {
@@ -89,6 +123,7 @@ appBar: AppBar(
               horizontal: 25,
             ),
             child: TextField(
+              controller: _searchController,
                 decoration: InputDecoration(
                     prefixIcon: const Icon(Icons.search),
                     border: OutlineInputBorder(
@@ -104,19 +139,20 @@ appBar: AppBar(
                 "MENU",
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: Colors.grey,
+                    color: Color.fromARGB(255, 5, 5, 5),
                     fontSize: 18),
               )),
           const SizedBox(height: 25),
           Expanded(
               child: ListView.builder(
                   scrollDirection: Axis.vertical,
-                  itemCount: foodMenu.length,
+                 // itemCount: foodMenu.length,
+                  itemCount: filteredFoodMenu.length,
                   itemBuilder: (context, index) => FoodTile(
-                        food: foodMenu[index],
+                        food: filteredFoodMenu[index],
                       )))
         ],
       ),
     );
   }
-}
+} 
