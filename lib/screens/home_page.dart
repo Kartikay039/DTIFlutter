@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/pages/homepage/food.dart';
-import 'package:flutter_application_1/pages/homepage/food_tile.dart';
+import 'package:flutter_application_1/components/food.dart';
+import 'package:flutter_application_1/components/food_tile.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
