@@ -94,7 +94,7 @@ class _LoginPageState extends State<RegisterPage> {
               child: Center(
                 child: Icon(
                   size: 100,
-                  Icons.healing
+                  Icons.food_bank,
                 ),
               ),
             ),

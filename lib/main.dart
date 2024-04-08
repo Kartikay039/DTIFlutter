@@ -66,26 +66,26 @@ class BottomNavBar extends StatelessWidget {
         PersistentBottomNavBarItem(
           icon: const Icon(Icons.home),
           title: ("Home"),
-          activeColorPrimary: const Color.fromARGB(255, 0, 255, 72),
+          activeColorPrimary: const Color.fromARGB(255, 84, 237, 89),
           inactiveColorPrimary: CupertinoColors.systemGrey,
         ),
         PersistentBottomNavBarItem(
           icon: const Icon(Icons.man),
-          title: ("Pick-up Requests"),
-          activeColorPrimary: const Color.fromARGB(255, 0, 255, 72),
+          title: ("Pick-up"),
+          activeColorPrimary: const Color.fromARGB(255, 84, 237, 89),
           inactiveColorPrimary: CupertinoColors.systemGrey,
         ),
         PersistentBottomNavBarItem(
           icon: const Icon(Icons.shopping_basket),
           title: ("Cart"),
-          activeColorPrimary: const Color.fromARGB(255, 0, 255, 72),
+          activeColorPrimary: const Color.fromARGB(255, 84, 237, 89),
           inactiveColorPrimary: CupertinoColors.systemGrey,
         ),
         
         PersistentBottomNavBarItem(
           icon: const Icon(Icons.settings),
           title: ("Settings"),
-          activeColorPrimary:  const Color.fromARGB(255, 0, 255, 72),
+          activeColorPrimary:  const Color.fromARGB(255, 84, 237, 89),
           inactiveColorPrimary: CupertinoColors.systemGrey,
         ),
         
