@@ -37,6 +37,7 @@ class _LoginPageState extends State<RegisterPage> {
 
       if(password.text == confirmPassword.text){
         await FirebaseAuth.instance.createUserWithEmailAndPassword(email: email.text, password: password.text);
+        // ignore: use_build_context_synchronously
         Navigator.pop(context);
       }
       else{
@@ -51,6 +52,7 @@ class _LoginPageState extends State<RegisterPage> {
     } on FirebaseAuthException catch (e){
 
       //pop the loading circle
+      // ignore: use_build_context_synchronously
       Navigator.pop(context);
 
       //show error message
@@ -88,13 +90,13 @@ class _LoginPageState extends State<RegisterPage> {
         child: Column(
           children: [
         
-            //TODO: replace it with app logo
+            
             const Padding(
               padding: EdgeInsets.only(top: 50, bottom: 30),
               child: Center(
                 child: Icon(
                   size: 100,
-                  Icons.healing
+                  Icons.food_bank
                 ),
               ),
             ),

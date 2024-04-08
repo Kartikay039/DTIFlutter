@@ -49,7 +49,7 @@ class BottomNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     List<Widget> buildScreens() {
       return [
-        // TODO : Replace with the actual widgets for your pages
+        
         const HomePage(),
 
         const Center(child: Text('Second Page')),
