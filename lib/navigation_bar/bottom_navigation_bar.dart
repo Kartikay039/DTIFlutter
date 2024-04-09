@@ -30,8 +30,8 @@ class BottomNavBar extends StatelessWidget {
       return [
         
         const HomePage(),
-        const Center(child: Text('Pick-up Requests')),
         const Center(child: Text('Cart')),
+        const Center(child: Text('Pick-up Requests')),
         const SettingPage(),
 
         // HomeScreen(),
@@ -48,15 +48,17 @@ class BottomNavBar extends StatelessWidget {
           activeColorPrimary: const Color.fromARGB(255, 84, 237, 89),
           inactiveColorPrimary: CupertinoColors.systemGrey,
         ),
-        PersistentBottomNavBarItem(
-          icon: const Icon(Icons.man),
-          title: ("Pick-up"),
-          activeColorPrimary: const Color.fromARGB(255, 84, 237, 89),
-          inactiveColorPrimary: CupertinoColors.systemGrey,
-        ),
+        
         PersistentBottomNavBarItem(
           icon: const Icon(Icons.shopping_basket),
           title: ("Cart"),
+          activeColorPrimary: const Color.fromARGB(255, 84, 237, 89),
+          inactiveColorPrimary: CupertinoColors.systemGrey,
+        ),
+
+        PersistentBottomNavBarItem(
+          icon: const Icon(Icons.man),
+          title: ("Pick-up"),
           activeColorPrimary: const Color.fromARGB(255, 84, 237, 89),
           inactiveColorPrimary: CupertinoColors.systemGrey,
         ),
