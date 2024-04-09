@@ -88,7 +88,7 @@ class _LoginPageState extends State<RegisterPage> {
         child: Column(
           children: [
         
-            //TODO: replace it with app logo
+            
             const Padding(
               padding: EdgeInsets.only(top: 50, bottom: 30),
               child: Center(

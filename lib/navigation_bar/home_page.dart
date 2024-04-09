@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/components/food.dart';
 import 'package:flutter_application_1/components/food_tile.dart';
@@ -68,53 +67,16 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[300],
- drawer: Drawer(
-  child: ListView(
-    padding: EdgeInsets.zero,
-    children: [
-      const DrawerHeader(
-        decoration: BoxDecoration(
-          color:   Color.fromARGB(255, 84, 237, 89),
-        ),
-        child: Text(
-          'User',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 24,
-          ),
+
+      appBar: AppBar(
+        backgroundColor:  const Color.fromARGB(255, 78, 217, 83),
+        
+        elevation: 0,
+        title: const Text(
+          'Bennett Bites',
+          style: TextStyle(color: Colors.white),
         ),
       ),
-      ListTile(
-        title: const Text('Profile'),
-        onTap: () {
-          // Handle menu item 1 tap
-        },
-      ),
-      ListTile(
-        title: const Text('Pick-up Requests'),
-        onTap: () {
-          // Handle menu item 2 tap
-        },
-      ),
-      ListTile(
-        title: const Text('Log Out'),
-        onTap: () async {
-          await FirebaseAuth.instance.signOut();
-        },
-      ),
-      // Add more menu items as needed
-    ],
-  ),
-),
-appBar: AppBar(
-  backgroundColor:  Color.fromARGB(255, 78, 217, 83),
-  
-  elevation: 0,
-  title: const Text(
-    'Welcome',
-    style: TextStyle(color: Colors.white),
-  ),
-),
 
       body: Column(
         children: [
@@ -125,33 +87,42 @@ appBar: AppBar(
             ),
             child: TextField(
               controller: _searchController,
-                decoration: InputDecoration(
-                    prefixIcon: const Icon(Icons.search),
-                    border: OutlineInputBorder(
-                        borderSide: const BorderSide(color: Colors.white),
-                        borderRadius: BorderRadius.circular(20)))),
+              decoration: InputDecoration(
+                  prefixIcon: const Icon(Icons.search),
+                  border: OutlineInputBorder(
+                    borderSide: const BorderSide(color: Colors.white),
+                    borderRadius: BorderRadius.circular(40)
+                  ),
+              ),
+            ),
           ),
           const SizedBox(height: 25),
           const Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: 25,
-              ),
-              child: Text(
-                "MENU",
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Color.fromARGB(255, 5, 5, 5),
-                    fontSize: 18),
-              )),
+            padding: EdgeInsets.symmetric(
+              horizontal: 25,
+            ),
+            child: Text(
+              "MENU",
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Color.fromARGB(255, 5, 5, 5),
+                  fontSize: 18),
+            ),
+          ),
           const SizedBox(height: 25),
           Expanded(
+            child: Center(
+              
               child: ListView.builder(
-                  scrollDirection: Axis.vertical,
-                 // itemCount: foodMenu.length,
-                  itemCount: filteredFoodMenu.length,
-                  itemBuilder: (context, index) => FoodTile(
-                        food: filteredFoodMenu[index],
-                      )))
+                scrollDirection: Axis.vertical,
+                // itemCount: foodMenu.length,
+                itemCount: filteredFoodMenu.length,
+                itemBuilder: (context, index) => FoodTile(
+                  food: filteredFoodMenu[index],
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );

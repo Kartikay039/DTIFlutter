@@ -75,7 +75,7 @@ class _LoginPageState extends State<LoginPage> {
         child: Column(
           children: [
         
-            //TODO: replace it with app logo
+            
             const Padding(
               padding: EdgeInsets.only(top: 60, bottom: 40),
               child: Center(
