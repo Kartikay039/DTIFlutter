@@ -69,7 +69,7 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(// i was not able to figure out how can i change background color of my AdaptivePageScaffold so i use scaffold
+    return Scaffold(
       backgroundColor: Colors.grey[300],
       body: SingleChildScrollView(
         child: Column(

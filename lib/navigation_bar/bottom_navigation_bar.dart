@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/navigation_bar/home_page.dart';
+import 'package:flutter_application_1/navigation_bar/cart_page.dart';
+import 'package:flutter_application_1/navigation_bar/menue_page.dart';
 import 'package:flutter_application_1/navigation_bar/settings.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
@@ -30,7 +31,7 @@ class BottomNavBar extends StatelessWidget {
       return [
         
         const HomePage(),
-        const Center(child: Text('Cart')),
+        const CartPage(),
         const Center(child: Text('Pick-up Requests')),
         const SettingPage(),
 
