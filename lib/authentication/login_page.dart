@@ -1,6 +1,5 @@
 import "package:firebase_auth/firebase_auth.dart";
 import "package:flutter/material.dart";
-import "package:flutter/widgets.dart";
 import "package:flutter_application_1/components/button.dart";
 import "package:flutter_application_1/components/my_textfeild.dart";
 import "package:flutter_application_1/components/square_tile.dart";
@@ -77,7 +76,7 @@ class _LoginPageState extends State<LoginPage> {
           children: [
         
             Padding(
-              padding: EdgeInsets.only(top: 20),
+              padding: const EdgeInsets.only(top: 50, left: 10, bottom: 50),
               child: Image.asset(
                 
                 // width: 100,

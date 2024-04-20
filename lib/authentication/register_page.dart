@@ -90,7 +90,7 @@ class _LoginPageState extends State<RegisterPage> {
         
             
             Padding(
-              padding: EdgeInsets.only(top: 14),
+              padding: const EdgeInsets.only(top: 50, left: 10, bottom: 40),
               child: Image.asset(
                 // width: 100,
                 height: 200,
