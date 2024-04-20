@@ -89,15 +89,14 @@ class _LoginPageState extends State<RegisterPage> {
           children: [
         
             
-            const Padding(
-              padding: EdgeInsets.only(top: 50, bottom: 30),
-              child: Center(
-                child: Icon(
-                  size: 100,
-                  Icons.food_bank,
-                ),
+            Padding(
+              padding: EdgeInsets.only(top: 14),
+              child: Image.asset(
+                // width: 100,
+                height: 200,
+                'assets/app_logo3.png',
               ),
-            ),
+            ), 
             
         
             Text(
@@ -137,13 +136,13 @@ class _LoginPageState extends State<RegisterPage> {
             
             const SizedBox(height: 25),
         
-            // sign in button
+            // sign up button
             MyButton(
               onTap: signUserUp,
               txt: 'Sign Up',
             ),
         
-            const SizedBox(height: 50),
+            const SizedBox(height: 30),
         
             // or continue with
             Padding(
@@ -173,7 +172,7 @@ class _LoginPageState extends State<RegisterPage> {
               ),
             ),
         
-            const SizedBox(height: 35),
+            const SizedBox(height: 30),
         
             // google + apple sign in buttons
             const Row(
@@ -189,7 +188,7 @@ class _LoginPageState extends State<RegisterPage> {
               ],
             ),
         
-            const SizedBox(height: 35),
+            const SizedBox(height: 20),
         
             // Alredy have an account? Login now
             Row(

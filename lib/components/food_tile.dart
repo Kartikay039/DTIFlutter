@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_application_1/components/food.dart';
 import 'package:provider/provider.dart';
 
@@ -103,14 +101,14 @@ class _FoodTileState extends State<FoodTile> {
 
               //remove button 
               Padding(
-                padding: EdgeInsets.only(right: 6),
+                padding: const EdgeInsets.only(right: 6),
                 child: Container(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Color.fromARGB(89, 111, 255, 0),
                     shape: BoxShape.circle,
                   ),
                   child: IconButton(
-                    icon: Icon(Icons.remove,),
+                    icon: const Icon(Icons.remove,),
                     onPressed: decrementQuantity,
                   ),
                 ),
@@ -119,21 +117,21 @@ class _FoodTileState extends State<FoodTile> {
               //number of items
               Text(
                 quantityCont.toString(),
-                style: TextStyle(
+                style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 18,
                 ),
               ),
               //add button
               Padding(
-                padding: EdgeInsets.only(left: 6),
+                padding: const EdgeInsets.only(left: 6),
                 child: Container(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Color.fromARGB(89, 111, 255, 0),
                     shape: BoxShape.circle,
                   ),
                   child: IconButton(
-                    icon: Icon(Icons.add,),
+                    icon: const Icon(Icons.add,),
                     onPressed: incrementQuantity,
                   ),
                 ),

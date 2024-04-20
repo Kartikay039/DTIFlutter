@@ -4,11 +4,23 @@ import 'package:flutter_application_1/authentication/firebase_options.dart';
 import 'package:flutter_application_1/authentication/auth_page.dart';
 import 'package:flutter_application_1/models/shop.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+
+
+final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   
+  const AndroidInitializationSettings initializationSettingsAndroid =
+    AndroidInitializationSettings('ic_launcher'); // Replace 'ic_launcher' with your app's launcher icon name
+
+  const InitializationSettings initializationSettings = InitializationSettings(
+    android: initializationSettingsAndroid,
+  );
+
+  flutterLocalNotificationsPlugin.initialize(initializationSettings);
   runApp(
     ChangeNotifierProvider(
       create: (context) => Shop(),

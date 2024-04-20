@@ -1,5 +1,6 @@
 import "package:firebase_auth/firebase_auth.dart";
 import "package:flutter/material.dart";
+import "package:flutter/widgets.dart";
 import "package:flutter_application_1/components/button.dart";
 import "package:flutter_application_1/components/my_textfeild.dart";
 import "package:flutter_application_1/components/square_tile.dart";
@@ -75,18 +76,17 @@ class _LoginPageState extends State<LoginPage> {
         child: Column(
           children: [
         
-            
-            const Padding(
-              padding: EdgeInsets.only(top: 60, bottom: 40),
-              child: Center(
-                child: Icon(
-                  size: 100,
-                  Icons.food_bank,
-                ),
+            Padding(
+              padding: EdgeInsets.only(top: 20),
+              child: Image.asset(
+                
+                // width: 100,
+                height: 200,
+                'assets/app_logo3.png',
+                
               ),
-            ),
+            ),    
             
-        
             Text(
               'Welcome back!',
               style: TextStyle(
@@ -137,7 +137,7 @@ class _LoginPageState extends State<LoginPage> {
               txt: 'Sign In',
             ),
         
-            const SizedBox(height: 50),
+            const SizedBox(height: 40),
         
             // or continue with
             Padding(
