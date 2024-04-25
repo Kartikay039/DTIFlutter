@@ -43,4 +43,10 @@ class Shop extends ChangeNotifier{
     _cart.remove(food);
     notifyListeners();
   }
+    void clearCart() {
+    _cart.clear();
+    notifyListeners();
+  }
+ 
+  
 }
